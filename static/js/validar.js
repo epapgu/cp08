@@ -24,10 +24,10 @@ function revelar(sw) {
     var ojo = document.getElementById('eyeimg')
     if(sw) {
         pwd.type='text'
-        ojo.src = "{{ url_for('static', filename='media/ocultar.png') }}"
+        ojo.src = "media/ocultar.png"
     }
     else {
         pwd.type='password'
-        ojo.src = "{{ url_for('static', filename='media/mostrar.png') }}"
+        ojo.src = "media/mostrar.png"
     }
 }
