@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cp06v4 - Reutilización de estilos referencia externa - Uso de Scripts con referencia externa</title>
+        <link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/estilo32.css") }}' />
+        <script src='{{ url_for("static", filename="js/validar.js") }}' type='text/JavaScript'></script>
+    </head>
+    <body>
+       <h1>Registro para vacunación COVID-19</h1>
+       <form name='frmreg' id='frmreg' method='GET' action=''>
+            <div class='ppal'>
+                <div class='fila'>
+                    <div class='c3'>Nombre</div>
+                    <div class='c7'><input type='text' id='nomtxt' /></div>
+                </div>
+                <div class='fila'>
+                    <div class='c3'>Usuario</div>
+                    <div class='c4'><input type='text' id='usrtxt' required minlength="8"/></div>
+                </div>
+                <div class='fila'>
+                    <div class='c3'>Sexo</div>
+                    <div class='c3'><input type='radio' name='sexrad' id='sexhom' value='H' />Hombre</div>
+                    <div class='c4'><input type='radio' name='sexrad' id='sexmuj' value='M' />Mujer</div>
+                </div>
+                <div class='fila'>
+                    <div class='c3'>Correo</div>
+                    <div class='c7'><input type='email' id='ematxt' required /></div>
+                </div>
+                <div class='fila'>
+                    <div class='c3'>Contraseña</div>
+                    <div class='c4'><input type='password' id='pwdtxt' required minlength="8"/></div>
+                    <div class='c1'><img alt='Ver' src='{{ url_for("static", filename="media/mostrar.png") }}' width='28px' id='eyeimg' onmouseenter="revelar(true);" onmouseout="revelar(false);" /></div>
+                </div>
+                <div class='fila'><p><input type='checkbox' id='chkpro' value='1' />Declaro haber entendido y doy mi consentimiento informado acorde a lo dispuesto en la ley 1266 y su decreto reglamentario 1581</p></div>
+                <div class='fila'><br /><hr /></div>
+                <div class='fila'>
+                    <div class='c7'>&nbsp;</div>
+                    <div class='c3'><input type='button' id='envbtn' value='Enviar' onclick="validar_formulario();"/></div>
+                </div>
+            </div>
+       </form> 
+    </body>
+</html>
